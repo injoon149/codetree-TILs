@@ -4,7 +4,7 @@ using namespace std;
 int printNum(int num)
 {
     if(1 <= num && num <= 9) return num;
-    else return printNum(num / 10) + printNum(num % 10); 
+    else return printNum(num / 10) + num % 10; 
 
 }
 
