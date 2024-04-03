@@ -6,7 +6,7 @@ bool IsMagicNumber(int num)
 {
     if(num % 3 == 0) return 1;
     else {
-        for(int i = 0; i<= 6; i++)
+        while(true)
         {
             if(num == 0) return 0;
             else {
