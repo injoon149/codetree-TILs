@@ -5,7 +5,6 @@ using namespace std;
 bool solution(vector<int> v1, vector<int> v2)
 {
     int num2 = v2[0];
-    int flag = 1;
     for(int i = 0; i<v1.size(); i++)
     {
         if(num2 == v1[i])
@@ -16,14 +15,13 @@ bool solution(vector<int> v1, vector<int> v2)
                 {
                     if(v2[j] == v1[i+j])
                     {
-                        flag = 0;
+                        if(j == v2.size()-1) return true;
                     }
-                    else flag = 1;
                 }
             }
         }
     }
-    return flag;
+    return false;
     
 }
 
@@ -41,7 +39,7 @@ int main() {
     {
         cin >> v2[i];
     }
-    if(solution(v1, v2) == 0) cout << "Yes";
+    if(solution(v1, v2) == true) cout << "Yes";
     else cout << "No";
     
     return 0;
