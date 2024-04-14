@@ -15,15 +15,26 @@ bool solution(int m, int d)
                 return 1;
             }
         }
-        else if(m %2 == 0)
+        else if(m %2 == 0 && m<8)
         {
             if(1<=d && d<=30){
                 return 1;
             }
         }
-        else if(m %2 == 1)
+        else if(m %2 == 1 && m<8)
         {
             if(1<=d && d<= 31){
+                return 1;
+            }
+        }
+        else if(m%2 == 0)
+        {
+            if(1<=d && d<=31){
+                return 1;
+            }
+        }
+        else if(m%2 == 1){
+            if(1<=d && d<=30){
                 return 1;
             }
         }
