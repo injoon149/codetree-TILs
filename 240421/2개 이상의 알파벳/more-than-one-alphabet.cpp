@@ -12,7 +12,7 @@ int main() {
     {
         set1.insert(s[i]);
     }
-    if(set1.size() != s.size())
+    if(set1.size() >= 2)
     {
         cout << "Yes";
     }
