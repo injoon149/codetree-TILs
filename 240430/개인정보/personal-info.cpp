@@ -30,6 +30,8 @@ void printClass(Student a[5])
 {
     for(int i = 0; i<5; i++)
     {
+        cout <<fixed;
+        cout.precision(1);
         cout << a[i].name<<" "<<a[i].key<<" "<<a[i].weight<<endl;
     }
 }
