@@ -17,7 +17,7 @@ class Location
 
 bool cmp(Location a, Location b)
 {
-    if(abs(a.x+a.y) < abs(b.x+b.y)) return true;
+    if(abs(a.x)+abs(a.y) < abs(b.x)+abs(b.y)) return true;
     else return false;
 }
 
