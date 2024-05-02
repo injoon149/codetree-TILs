@@ -33,7 +33,7 @@ void timeString2(int m1, int d1, int m2, int d2)
         else i--;
         d1--;
         s = strings[i];
-        if(d1 <0){
+        if(d1 == 0){
             --m1;
             d1 = num_of_days[m1];
         }
