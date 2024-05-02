@@ -48,6 +48,7 @@ int main() {
     if(m2 > m1) timeString1(m1, d1, m2, d2);
     else if(m2 == m1){
         if(d2 > d1) timeString1(m1, d1, m2, d2);
+        else if(d2 == d1) cout << 0;
         else timeString2(m1, d1, m2, d2);
     }
     else timeString2(m1, d1, m2, d2);
