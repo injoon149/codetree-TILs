@@ -25,7 +25,7 @@ void timeString2(int m1, int d1, int m2, int d2)
 {
     int num_of_days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     string strings[7] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
-    string s;
+    string s = strings[1];
     int i = 1;
     while(true){
         if(m1 == m2 && d1 == d2) break;
@@ -34,7 +34,7 @@ void timeString2(int m1, int d1, int m2, int d2)
         d1--;
         s = strings[i];
         if(d1 <0){
-            m1--;
+            --m1;
             d1 = num_of_days[m1];
         }
     }
