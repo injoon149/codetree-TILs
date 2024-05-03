@@ -10,7 +10,7 @@ string change(int a, int b)
     {
         if(a == 0) break;
         s += to_string(a%b);
-        a = a/4;
+        a = a/b;
     }
     reverse(s.begin(), s.end());
     return s;
