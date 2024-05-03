@@ -7,11 +7,11 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n, x1, x2;
     cin >> n;
-    vector<int> v(n+1, 0);
+    vector<int> v(201, 0);
     for(int i = 0; i<n; i++)
     {
         cin >> x1 >> x2;
-        for(int j = x1; j<=x2-1; j++)
+        for(int j = x1+100; j<=x2+99; j++)
         {
             v[j] +=1;
         }
