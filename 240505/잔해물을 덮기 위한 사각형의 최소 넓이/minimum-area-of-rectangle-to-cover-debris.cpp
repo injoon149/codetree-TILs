@@ -44,7 +44,7 @@ int main() {
     else
     {
     cout << (*max_element(v1.begin(), v1.end()) - *min_element(v1.begin(), v1.end())) * 
-    (*max_element(v2.begin(), v2.end()) - *min_element(v2.begin(), v2.end()));
+    (*max_element(v2.begin(), v2.end()) - *min_element(v2.begin(), v2.end()) );
     }
     return 0;
 }
