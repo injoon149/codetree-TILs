@@ -18,7 +18,7 @@ int main() {
     cin >> x1 >> y1 >> x2 >> y2;
     for(int i = x1; i<=x2; i++)
     {
-        for(int j = y1; j<y2; j++)
+        for(int j = y1; j<=y2; j++)
         {
             if(v[i+1000][j+1000] == 1)
             {
