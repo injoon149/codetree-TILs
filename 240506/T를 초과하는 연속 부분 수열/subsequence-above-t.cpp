@@ -25,7 +25,8 @@ int main() {
         }
         if(cnt > max) max = cnt;
     }
-    cout << cnt;
+    if(cnt == 1) cout << 0;
+    else cout << cnt;
 
     return 0;
 }
