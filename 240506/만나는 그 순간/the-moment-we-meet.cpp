@@ -60,6 +60,7 @@ int main()
             break;
         }
     } 
-    cout << cnt;
+    if(cnt == 0) cout << -1;
+    else cout << cnt;
     return 0;
 }
