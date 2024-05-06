@@ -17,16 +17,16 @@ int main() {
     {
         if(i == 0 || v[i] <= t)
         {
-            cnt = 1;
+            cnt = 0;
         }
         else if(v[i] > t)
         {
             cnt++;
+            if(cnt > max) max = cnt;
         }
-        if(cnt > max) max = cnt;
+        
     }
-    if(cnt == 1) cout << 0;
-    else cout << cnt;
+    cout << max;
 
     return 0;
 }
