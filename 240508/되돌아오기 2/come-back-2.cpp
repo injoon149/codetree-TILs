@@ -31,7 +31,11 @@ int main() {
         cnt++;
         if(x == 100001 && y == 100001) break;
     }
-    if(cnt == s.size()) cout << -1;
+    if(cnt == s.size())
+    {
+        if(x == 100001 && y == 100001) cout << cnt;
+        else cout <<-1;
+    }
     else cout << cnt;
     return 0;
 }
