@@ -29,7 +29,7 @@ int main() {
         {
             x = nx;
             y = ny;
-            if(plus_cnt == 26) plus_cnt = 0;
+            if(plus_cnt == 25) plus_cnt = 0;
             else plus_cnt++;
             v[x][y] = 'A' + plus_cnt;
         }
