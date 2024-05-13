@@ -32,8 +32,9 @@ int main() {
             if(max < stoi(s)) 
             {
                 max = stoi(s);
-                s[i] = '0';
+               
             }
+            s[i] = '0';
         }
         else
         {
@@ -41,8 +42,8 @@ int main() {
             if(max < stoi(s)) 
             {
                 max = stoi(s);
-                s[i] = '1';
             }
+            s[i] = '1';
         }
     }
     cout << conversion(max);
