@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <climits>
+#include <cmath>
 using namespace std;
 
 int main() {
@@ -20,8 +21,10 @@ int main() {
         for(int j = 0; j<n; j++)
         {
             num = j - i;
-            if(num < 0 ) num = 5+num;
-            cnt = cnt + (num * v[j]);
+            if(num < 0 ){
+                cnt = cnt + ((n+num)*v[j]);
+            }
+            else cnt = cnt + (num * v[j]);
         }
         if(min > cnt) min = cnt;
         cnt = 0;
