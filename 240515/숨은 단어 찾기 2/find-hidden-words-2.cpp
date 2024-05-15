@@ -47,14 +47,15 @@ int main() {
                                 curt++;
                                 curx = nx;
                                 cury = ny;
+                                if(curt == 3) 
+                                {
+                                    cnt++;
+                                    break;
+                                }
                             }
                             else break;
                         }
 
-                    }
-                    if(curt == 3)
-                    {
-                        cnt++;
                     }
                 }
             }
