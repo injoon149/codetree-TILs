@@ -31,8 +31,8 @@ int main() {
                     ans = max(ans, arr[i] + arr[j] + arr[k]);
                 }
             }
-            cout << ans;
-            return 0;
         }
     }
+    cout << ans;
+    return 0;
 }
