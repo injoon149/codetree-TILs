@@ -13,7 +13,7 @@ int main() {
     }
     int max = 0;
     int cnt = 0;
-    for(int i = 0; i<n-k; i++)
+    for(int i = 0; i<=n-k; i++)
     {
         for(int j = i; j<i+k; j++)
         {
