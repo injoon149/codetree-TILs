@@ -11,23 +11,33 @@ int main()
     int max = 0;
     int cnt = 0;
 
-    for(int i = 0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> candy >> basket;
         v[basket] += candy;
     }
-    for(int i = 0; i<101; i++)
+    for (int i = 0; i < 101; i++)
     {
         cnt = 0;
-        for(int j = i-k; j<=i+k; j++)
+        if (i - k < 0)
         {
-            if(i-k <0) cnt += 0;
-            else cnt += v[j];
+            for (int t = 0; t <= i + k; t++)
+            {
+                cnt += v[t];
+            }
+            if (max < cnt) max = cnt;
         }
-        if(max < cnt) max = cnt;
+        else
+        {
+            for (int t = i - k; t <= i + k; t++)
+            {
+                cnt += v[t];
+            }
+            if (max < cnt) max = cnt;
+        }
     }
-    
+
     cout << max;
     return 0;
-    
+
 }
