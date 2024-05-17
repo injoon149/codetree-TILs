@@ -6,7 +6,7 @@ int main()
 {
     int n, k;
     cin >> n >> k;
-    vector<int> v(201, 0);
+    vector<int> v(1001, 0);
     int candy, basket;
     int max = 0;
     int cnt = 0;
