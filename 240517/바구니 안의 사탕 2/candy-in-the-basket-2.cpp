@@ -21,7 +21,7 @@ int main()
         cnt = 0;
         for(int j = i-k; j<=i+k; j++)
         {
-            if(i-k <0) continue;
+            if(i-k <0) cnt += 0;
             else cnt += v[j];
         }
         if(max < cnt) max = cnt;
