@@ -19,15 +19,14 @@ int main()
     for(int i = 0; i<101; i++)
     {
         cnt = 0;
-        if(i >= k)
+        for(int j = i-k; j<=i+k; j++)
         {
-            for(int j = i-k; j<=i+k; j++)
-            {
-                cnt += v[j];
-            }
-            if(max < cnt) max = cnt;
+            if(i-k <0) continue;
+            else cnt += v[j];
         }
+        if(max < cnt) max = cnt;
     }
+    
     cout << max;
     return 0;
     
