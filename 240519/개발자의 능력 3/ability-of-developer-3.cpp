@@ -31,7 +31,7 @@ int main() {
     {
         for(int j = i+1; j<6; j++)
         {
-            for(int k = i+2; k<6; k++)
+            for(int k = j+1; k<6; k++)
             {
                 min_diff = min(min_diff, GetDiff(i,j,k));
             }
