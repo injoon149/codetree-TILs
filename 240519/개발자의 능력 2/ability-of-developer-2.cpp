@@ -17,6 +17,6 @@ int main()
     int third = set[2] + set[3];
     int min_num = min(first, second);
     int max_num = max(second, third);
-    cout << max_num - min_num;
+    cout << abs(max_num - min_num);
     return 0;
 }
