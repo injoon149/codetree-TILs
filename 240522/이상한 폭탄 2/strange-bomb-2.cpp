@@ -17,7 +17,7 @@ int main() {
     {
         for(int j = i+1; j<n; j++)
         {
-            if(j-i <= 3 && v[j] == v[i])
+            if(j-i <= k && v[j] == v[i])
             {
                 answer.push_back(v[j]);
             }
