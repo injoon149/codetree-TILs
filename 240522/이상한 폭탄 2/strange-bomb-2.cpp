@@ -23,7 +23,8 @@ int main() {
             }
         }
     }
-    cout << *max_element(answer.begin(), answer.end());
+    if(answer.size() == 0) cout << -1;
+    else cout << *max_element(answer.begin(), answer.end());
 
     return 0;
 }
