@@ -12,8 +12,10 @@ int main() {
         cin >> v[i];
     }
     int cnt = 0;
+    int max = 0;
     for(int i = 0; i<105; i++)
     {
+        cnt = 0;
         for(int j = 0; j<n; j++)
         {
             for(int k = j+1; k<n; k++)
@@ -21,7 +23,8 @@ int main() {
                 if((v[k]-i) == (i-v[j])) cnt++;
             }
         }
+        if(max < cnt) max = cnt;
     }
-    cout << cnt;
+    cout << max;
     return 0;
 }
