@@ -1,29 +1,33 @@
 #include <iostream>
-#include <set>
-#include <string>
+#include <algorithm>
 using namespace std;
 
-bool solution(int num)
-{
-    set<char> set1;
-    string s = to_string(num);
-    for(int i = 0; i<s.size(); i++)
-    {
-        set1.insert(s[i]);
-    }
-    if(set1.size() == 2) return true;
-    else return false;
-}
+int x, y;
 
-int main() {
-    // 여기에 코드를 작성해주세요.
-    int x, y;
+int main()
+{
     cin >> x >> y;
-    int cnt = 0;
+    int ans = 0;
+
     for(int i = x; i<=y; i++)
     {
-        if(solution(i) == true) cnt++;
+        int num = i;
+        int digit[10] = {};
+        int all_digits = 0;
+        while(num) {
+            digit[num%10] ++;
+            all_digits++;
+            num /= 10;
+        }
+
+        bool interesting = false;
+
+        for(int j = 0; j<10; j++)
+        {
+            if(digit[j] == all_digits-1) interesting = true;
+        }
+        if(interesting) ans++;
     }
-    cout << cnt;
+    cout << ans;
     return 0;
 }
