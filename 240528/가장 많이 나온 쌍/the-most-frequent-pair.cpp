@@ -10,7 +10,7 @@ int CountNum(int first, int second) {
     int cnt = 0;
     for(int i = 0; i<m; i++)
     {
-        if(first == a[i] && first == b[i]) cnt++;
+        if(first == a[i] && second == b[i]) cnt++;
         else if(second == a[i] && first == b[i]) cnt++;
     }
     return cnt;
