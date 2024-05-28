@@ -1,52 +1,38 @@
 #include <iostream>
-#include <vector>
-#include <climits>
+#include <algorithm>
+#define MAX_N 100
+#define MAX_NUM 100
 using namespace std;
 
 int n, k;
+int arr[MAX_N];
 
-bool IsPossible(int max_val, vector<int> v)
-{
-    vector<int> v2;
-    v2.push_back(1);
-
+bool IsPossible(int limit){
+    int last_idx = 0;
     for(int i = 1; i<n; i++)
     {
-        if(v[i] <= max_val)
+        if(arr[i] <= limit)
         {
-            v2.push_back(i);
+            if(i - last_idx > k) return false;
+            last_idx = i;
         }
-    }
-    v2.push_back(n);
-    for(int i = 1; i<v2.size(); i++)
-    {
-        int dist = v2[i] - v2[i-1];
-        if(dist > k) return false;
     }
     return true;
 }
 
-int main() {
-    // 여기에 코드를 작성해주세요.
-    
+int main()
+{
     cin >> n >> k;
-    vector<int> v(n, 0);
     for(int i = 0; i<n; i++)
     {
-        cin >> v[i];
+        cin >> arr[i];
     }
-    int max = INT_MAX;
-    for(int i = 0; i<n; i++)
+    for(int i = max(arr[0], arr[n-1]); i<=MAX_NUM; i++)
     {
-        if(IsPossible(v[i], v))
-        {
-            if(max > v[i])
-            {
-                max = v[i];
-            }
+        if(IsPossible(i)) {
+            cout << i;
+            break;
         }
     }
-    cout << max;
-
     return 0;
 }
