@@ -17,6 +17,7 @@ bool IsPossible(int max_val, vector<int> v)
             v2.push_back(i);
         }
     }
+    v2.push_back(n);
     for(int i = 1; i<v2.size(); i++)
     {
         int dist = v2[i] - v2[i-1];
