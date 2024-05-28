@@ -16,7 +16,11 @@ int main() {
     second_num += abs(a - y);
     second_num += abs(b - x);
 
+    int third_num = 0;
+    third_num += abs(b-a);
+
     int min_num = min(first_num, second_num);
+    min_num = min(min_num, third_num);
     cout << min_num;
     return 0;
 }
