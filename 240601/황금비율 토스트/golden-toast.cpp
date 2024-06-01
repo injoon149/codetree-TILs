@@ -1,59 +1,51 @@
 #include <iostream>
-#include <list>
 #include <string>
+#include <list>
+ 
 using namespace std;
 
-int main() {
-    // 여기에 코드를 작성해주세요.
-    int n, m;
-    char direction;
-    char direction2;
-    cin >> n >> m;
-    list<char> v;
-    string s;
-    cin >> s;
-    for(int i = 0; i<s.length(); i++)
-    {
-        v.push_back(s[i]);
-    }
-    auto it = v.end();
-    
-    for(int i = 0; i<m; i++)
-    {
-        cin >> direction;
-        if(direction == 'L')
-        {
-            if(it != v.begin())
-            {
-                it--;
-            }
-        }
-        else if(direction == 'R')
-        {
-            if(it != v.end())
-            {
-                it++;
-            }
-        }
-        else if(direction == 'D')
-        {
-            if(it != v.end())
-            {
-                it == v.erase(it);     //바로 뒤에 있는 빵 제거
-            }
-        }
-        else if(direction == 'P')
-        {
-            cin >> direction2;
-            v.insert(it, direction2);
+int n, m;
 
+string s;
+
+int main(){
+    // 입력:
+    cin >> n >> m;
+    cin >> s;
+    
+    // 연결리스트 정의
+    list<char> l;
+    for(int i = 0; i < s.length(); i++)
+        l.push_back(s[i]);  
+    // iterator 정의
+    list<char>::iterator it = l.end();
+    
+    while(m--) { 
+        char command;
+        cin >> command;
+        
+        if(command == 'L') {
+            if(it != l.begin())   // 빵들의 맨 앞이 아니라면
+                it--;             // 앞으로 이동합니다.
+        } 
+        else if(command == 'R') {
+            if(it != l.end())     // 빵들의 맨 뒤가 아니라면
+                it++;             // 뒤로 이동합니다.
         }
+        else if(command == 'D') {
+            if(it != l.end())     // 빵들의 맨 뒤가 아니라면
+                it = l.erase(it); // 바로 뒤에 있는 빵을 제거합니다.
+        }
+        else if(command == 'P') {
+            char c;
+            cin >> c;
+            l.insert(it, c);      // 가리키는 위치에 문자 c를 추가합니다.
+        }    
     }
-    for(auto it = v.begin(); it != v.end(); it++)
-    {
+    
+    // 출력:
+    for (list<char>::iterator it = l.begin(); it != l.end(); it++) {
         cout << *it;
     }
-
-
-    return 0;
+    return 0;     
 }
