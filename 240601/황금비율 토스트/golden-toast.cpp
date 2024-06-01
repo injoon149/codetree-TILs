@@ -12,7 +12,7 @@ int main() {
     list<char> v;
     string s;
     cin >> s;
-    for(int i = 0; i<s.size(); i++)
+    for(int i = 0; i<s.length(); i++)
     {
         v.push_back(s[i]);
     }
