@@ -39,16 +39,3 @@ int main() {
     }
     return 0;
 }
-        {
-            if(s.empty()) cout << "1" << endl;
-            else cout << "0" << endl;
-        \}
-        else if(s == "front")
-        {
-            cout << q.front() << endl;
-        \}
-    \}
-    return 0;
-
-61427int main() {    {        {
-$0
