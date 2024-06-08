@@ -43,7 +43,7 @@ int main() {
         {
             cout << d.front() << endl;
         }
-        else
+        else if(s == "back")
         {
             cout << d.back() << endl;
         }
