@@ -7,6 +7,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     deque<int> d;
     int n;
+    cin >> n;
     string s;
     int num;
     for(int i = 0; i<n; i++)
@@ -24,10 +25,12 @@ int main() {
         }
         else if(s == "pop_front")
         {
+            cout << d.front() << endl;
             d.pop_front();
         }
         else if(s == "pop_back")
         {
+            cout << d.back() << endl;
             d.pop_back();
         }
         else if(s == "size")
@@ -36,7 +39,7 @@ int main() {
         }
         else if(s == "empty")
         {
-            if(s.empty()) cout << "1" << endl;
+            if(d.empty()) cout << "1" << endl;
             else cout << "0" << endl;
         }
         else if(s == "front")
