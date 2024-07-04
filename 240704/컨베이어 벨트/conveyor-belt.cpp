@@ -28,7 +28,9 @@ int main() {
         cout << v2[0] << endl;
         return 0;
     }
-    for(int j = 0; j<t; j++)
+    else
+    {
+            for(int j = 0; j<t; j++)
     {
         int tmp1 = v2[n-1];
         int tmp2 = v2[0];
@@ -55,6 +57,8 @@ int main() {
     {
         cout << v2[i] <<" ";
     }
+    }
+
     
     return 0;
 }
