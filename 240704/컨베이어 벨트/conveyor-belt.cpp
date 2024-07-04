@@ -16,6 +16,18 @@ int main() {
     {
         cin >> v2[i];
     }
+    if(n == 1)
+    {
+        for(int j = 0; j<t; j++)
+        {
+            int tmp3 = v2[0];
+            v2[0] = v[0];
+            v[0] = tmp3;
+        }
+        cout << v[0] << endl;
+        cout << v2[0] << endl;
+        return 0;
+    }
     for(int j = 0; j<t; j++)
     {
         int tmp1 = v2[n-1];
