@@ -16,19 +16,23 @@ int main() {
     {
         cin >> v2[i];
     }
-    int tmp1 = v2[n-1];
-    int tmp2 = v2[0];
-    v2[0] = v[n-1];
-    for(int i = n-2; i>=0; i--)
+    for(int j = 0; j<t; j++)
     {
-        v[i+1] = v[i];
+        int tmp1 = v2[n-1];
+        int tmp2 = v2[0];
+        v2[0] = v[n-1];
+        for(int i = n-2; i>=0; i--)
+        {
+            v[i+1] = v[i];
+        }
+        for(int i = n-1; i>0; i--)
+        {
+            v2[i+1] = v2[i];
+        }
+        v[0] = tmp1;
+        v2[1] = tmp2;
     }
-    for(int i = n-1; i>0; i--)
-    {
-        v2[i+1] = v2[i];
-    }
-    v[0] = tmp1;
-    v2[1] = tmp2;
+
 
     for(int i = 0; i<v.size(); i++)
     {
