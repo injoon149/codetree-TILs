@@ -28,6 +28,22 @@ int main() {
         cout << v2[0] << endl;
         return 0;
     }
+    else if(n == 2)
+    {
+        for(int j = 0; j<t; j++)
+        {
+            int tmp4 = v2[1];
+            int tmp5 = v[1];
+            int tmp6 = v2[0];
+            v[1] = v[0];
+            v2[0] = tmp5;
+            v2[1] = tmp6;
+            v[0] = tmp4;
+        }
+        cout << v[0] << " " << v[1] << endl;
+        cout << v2[0] << " " << v2[1];
+        return 0;
+    }
     else
     {
             for(int j = 0; j<t; j++)
