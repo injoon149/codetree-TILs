@@ -9,7 +9,7 @@ bool InRange(int a, int b)
 {
     if(0 <= a && a < n)
     {
-        if(0 <= b && b < n)
+        if(0 <= b && b < m)
         {
             return true;
         }
