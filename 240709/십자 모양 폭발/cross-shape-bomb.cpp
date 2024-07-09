@@ -57,7 +57,7 @@ int main() {
         {
             v[j][i] = 0;
         }
-        for(int j = v2.size(); j<n; j++)
+        for(int j = v2.size()-1; j<n; j++)
         {
             v2.push_back(0);
         }
