@@ -1,79 +1,82 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
+#define MAX_N 200
 using namespace std;
 
 int n;
+int grid[MAX_N][MAX_N];
+int next_grid[MAX_N][MAX_N];
 
-bool InRange(int a)
+bool InBombRange(int x, int y, int center_x, int center_y, 
+int bomb_range)
 {
-    if(0 <= a && a < n)
-    {
-        return true;
-    }
-    return false;
+    return (x == center_x || y == center_y) && abs(x - center_x) 
+    + abs(y - center_y) < bomb_range;
 }
 
-int main() {
-    // 여기에 코드를 작성해주세요.
-    int r,c;
-    cin >> n;
-    vector<vector<int>> v(n, vector<int>(n, 0));
+void Bomb(int center_x, int center_y) 
+{
+    int bomb_range = grid[center_x][center_y];
+
+    // Step1. 폭탄이 터질 위치는 0으로 채워줌
     for(int i = 0; i<n; i++)
     {
         for(int j = 0; j<n; j++)
         {
-            cin >> v[i][j];
-        }
-    }
-    cin >> r >> c;
-    int num = v[r-1][c-1];
-    for(int i = r-num; i<= r; i++)
-    {
-        if(InRange(i))
-        {
-            v[i][c-1] = 0;
-        }
-    }
-    for(int i = c - num; i<=c; i++)
-    {
-        if(InRange(i))
-        {
-            v[r-1][i] = 0;
+            if(InBombRange(i, j, center_x, center_y, bomb_range))
+            {
+                grid[i][j] = 0;
+            }
         }
     }
 
-    for(int i = 0; i<n; i++)
+    // Step2. 폭탄이 터진 이후의 결과를 next_grid에 저장
+    for(int j = 0; j<n; j++)
     {
-        vector<int> v2;
-        for(int j = n-1; j >=0; j--)
+        int next_row = n-1;
+        for(int i = n-1; i>=0; i--)
         {
-            if(v[j][i] != 0)
+            if(grid[i][j])
             {
-                v2.push_back(v[j][i]);
+                next_grid[next_row--][j] = grid[i][j];
             }
-            
-        }
-        for(int j = n-1; j >=0; j--)
-        {
-            v[j][i] = 0;
-        }
-        for(int j = v2.size()-1; j<n; j++)
-        {
-            v2.push_back(0);
-        }
-        for(int j = n-1; j>=0; j--)
-        {
-            v[j][i] = v2[n-1-j];
         }
     }
+
+    // Step3. grid로 다시 값을 옮겨준다.
     for(int i = 0; i<n; i++)
     {
         for(int j = 0; j<n; j++)
         {
-            cout << v[i][j] << " ";
+            grid[i][j] = next_grid[i][j];
+        }
+    }
+}
+
+int main()
+{
+    cin >> n;
+
+    for(int i = 0; i<n; i++)
+    {
+        for(int j = 0; j<n; j++)
+        {
+            cin >> grid[i][j];
+        }
+    }
+
+    int r,c;
+    cin >> r >> c;
+
+    Bomb(r-1, c-1);
+
+    for(int i = 0; i<n; i++)
+    {
+        for(int j = 0; j<n; j++)
+        {
+            cout << grid[i][j] << " ";
         }
         cout << endl;
     }
-    
     return 0;
 }
