@@ -14,13 +14,11 @@ int main() {
         v.push_back(num);
     }
     int max = 0;
-    vector<int> v2(n, 0);
+    vector<int> v2(1000001, 0);
     for(int i = 0; i<n-1; i++)
     {
         for(int j = i+1; j<n; j++)
         {
-            int bomb_name = 0;
-            int bomb_explode = 0;
             if(v[i] == v[j])
             {
                 if(j-i <= k)
