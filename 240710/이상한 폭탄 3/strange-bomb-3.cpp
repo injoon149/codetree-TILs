@@ -29,7 +29,7 @@ int main() {
         }
     }
     int result = 0;
-    for(int i = 0; i<v2.size(); i++)
+    for(int i = v2.size()-1; i>=0; i--)
     {
         if(max < v2[i])
         {
