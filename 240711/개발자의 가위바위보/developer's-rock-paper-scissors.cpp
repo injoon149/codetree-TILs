@@ -10,7 +10,7 @@ int calculate(int scissor, int rock, int bo, vector<int> v1, vector<int> v2)
     {
         if(v1[i] == rock && v2[i] == scissor) cnt++;
         else if(v1[i] == scissor && v2[i] == bo) cnt++;
-        else if(v1[i] == bo && v2[i] == scissor) cnt++;
+        else if(v1[i] == bo && v2[i] == rock) cnt++;
     }
     return cnt;
 }
