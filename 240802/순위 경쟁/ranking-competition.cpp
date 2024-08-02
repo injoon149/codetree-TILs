@@ -26,7 +26,7 @@ int main() {
                 change++;
             }
         }
-        else if(ascore == bscore && bscore != cscore)
+        else if(ascore == bscore && bscore > cscore)
         {
             if(stage != "AB")
             {
@@ -34,7 +34,7 @@ int main() {
                 change++;
             }
         }
-        else if(ascore == cscore && bscore != cscore)
+        else if(ascore == cscore && cscore > bscore)
         {
             if(stage != "AC")
             {
@@ -42,7 +42,7 @@ int main() {
                 change++;
             }
         }
-        else if(bscore == cscore && bscore != ascore)
+        else if(bscore == cscore && bscore > ascore)
         {
             if(stage != "BC")
             {
