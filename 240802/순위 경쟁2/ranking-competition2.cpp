@@ -13,7 +13,7 @@ int main() {
     }
     int s;
     string c;
-    string stage="C";
+    string stage="AB";
     int ascore = 0, bscore = 0;
     int change = 0;
     for(int i = 0; i<n; i++)
