@@ -21,7 +21,7 @@ bool CanGo(int x, int y, int n, int m) {
 
 void DFS(int x, int y, int n, int m) {
 
-    if(x == (n-1) && y == (m-1))
+    if(x == (m-1) && y == (n-1))
     {
         result = 1;
         return;
