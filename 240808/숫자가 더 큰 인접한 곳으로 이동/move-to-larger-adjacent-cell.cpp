@@ -31,23 +31,49 @@ int main() {
     int startx = 0, starty = 0;
     vector<int> v2;
     v2.push_back(v[r][c]);
+    vector<int> flag(5, 0);
+
+    
 
 
-    for(int i = 0; i<4; i++)
+
+    while(1)
     {
-        if(InRange(r + dx[i], c + dy[i]))
+        for(int i = 1; i<=4; i++)
         {
-            max = v[r][c];
-            if(v[r+dx[i]][c+dy[i]] > max)
+            flag[i] = 1;
+        }
+
+        for(int i = 0; i<4; i++)
+        {
+            if(InRange(r + dx[i], c + dy[i]))
             {
-                startx = r + dx[i];
-                starty = c + dy[i];
-                v2.push_back(v[startx][starty]);
-                r = startx;
-                c = starty;
+                max = v[r][c];
+                if(v[r+dx[i]][c+dy[i]] > max)
+                {
+                    startx = r + dx[i];
+                    starty = c + dy[i];
+                    v2.push_back(v[startx][starty]);
+                    r = startx;
+                    c = starty;
+                }
+                else
+                {
+                    flag[i+1] = 0;
+                }
             }
+            else flag[i+1] = 0;
+        }
+        if(flag[1] == 0 && flag[2] == 0 && flag[3] == 0 && flag[4] == 0)
+        {
+            for(int i = 0; i<v2.size(); i++)
+            {
+                cout << v2[i] <<" ";
+            }
+            return 0;
         }
     }
+
     for(int i = 0; i<v2.size(); i++)
     {
         cout << v2[i] <<" ";
