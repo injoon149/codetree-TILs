@@ -6,11 +6,11 @@ int n, m;
 int answer[101][101];
 bool visited[101][101];
 int result = 0;
-int dx[2] = {1, 0};
-int dy[2] = {0, 1};
+int dx[2] = {0, 1};
+int dy[2] = {1, 0};
 
 bool InRange(int x, int y, int n, int m) {
-    return 0 <= x && x <m  && 0 <= y && y <n;
+    return 0 <= x && x <n  && 0 <= y && y <m;
 }
 
 bool CanGo(int x, int y, int n, int m) {
@@ -21,7 +21,7 @@ bool CanGo(int x, int y, int n, int m) {
 
 void DFS(int x, int y, int n, int m) {
 
-    if(x == (m-1) && y == (n-1))
+    if(x == (n-1) && y == (m-1))
     {
         result = 1;
         return;
@@ -33,6 +33,7 @@ void DFS(int x, int y, int n, int m) {
         int new_y = y + dy[i];
         if(CanGo(new_x, new_y, n, m))
         {
+            visited[new_x][new_y] = 1;
             DFS(new_x, new_y, n, m);
         }
     }
@@ -48,6 +49,7 @@ int main() {
             cin >> answer[i][j];
         }
     }
+    visited[0][0] = 1;
     DFS(0,0,n, m);
     cout << result;
 
