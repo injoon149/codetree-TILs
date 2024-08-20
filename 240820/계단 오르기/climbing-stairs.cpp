@@ -13,6 +13,6 @@ int main() {
     }
     int n;
     cin >> n;
-    cout << arr[n];
+    cout << arr[n] % 10007;
     return 0;
 }
