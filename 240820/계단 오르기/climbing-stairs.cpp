@@ -9,10 +9,10 @@ int main() {
     arr[3] = 1;
     for(int i = 4; i<=1000; i++)
     {
-        arr[i] = arr[i-2] + arr[i-3];
+        arr[i] = (arr[i-2] % 10007 + arr[i-3] % 10007) %10007;
     }
     int n;
     cin >> n;
-    cout << arr[n] % 10007;
+    cout << arr[n];
     return 0;
 }
