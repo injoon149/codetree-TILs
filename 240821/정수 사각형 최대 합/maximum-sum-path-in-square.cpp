@@ -23,7 +23,7 @@ int main() {
     }
     for(int i = 1; i<n; i++)
     {
-        dp[0][i] = dp[0][i-1] + v[0][i];
+        dp[i][i] = dp[i-1][i-1] + v[i][i];
     }
     for(int i = 1; i<n; i++)
     {
@@ -37,4 +37,5 @@ int main() {
 
 
     return 0;
+
 }
