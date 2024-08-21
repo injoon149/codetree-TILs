@@ -7,7 +7,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n;
     cin >> n;
-    vector<vector<long long>> v(n, vector<long long>(n, 0));
+    vector<vector<long long>> v(1000, vector<long long>(1000, 0));
     for(long long i = 0; i<n; i++)
     {
         for(long long j = 0; j<n; j++)
@@ -15,7 +15,7 @@ int main() {
             cin >> v[i][j];
         }
     }
-    vector<vector<long long>> dp(101, vector<long long>(101, 0));
+    vector<vector<long long>> dp(1000, vector<long long>(1000, 0));
     dp[0][0] = v[0][0];
     for(int i = 1; i<n; i++)
     {
@@ -27,7 +27,7 @@ int main() {
     }
     for(int i = 1; i<n; i++)
     {
-        for(int j = 1; j<=i; j++)
+        for(int j = 1; j<n; j++)
         {
             
             dp[i][j] = max(dp[i-1][j] + v[i][j], dp[i][j-1] + v[i][j]);
