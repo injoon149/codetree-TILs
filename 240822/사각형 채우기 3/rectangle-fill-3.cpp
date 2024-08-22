@@ -1,18 +1,26 @@
 #include <iostream>
+#define MAX_N 1000
+#define MOD 1000000007
+
 using namespace std;
 
-long long dp[1001];
+int n;
+long long dp[MAX_N+1];
 
-int main() {
-    // 여기에 코드를 작성해주세요.
-    int n;
+int main()
+{
     cin >> n;
+    dp[0] = 1;
     dp[1] = 2;
-    for(int i = 2; i<=1000; i++)
+
+    for(int i = 2; i<=n; i++)
     {
-        dp[i] = (dp[i-1] * 3 + 1) % 1000000007;
+        dp[i] = (dp[i-1] * 2 + dp[i-2] * 3) % MOD;
+        for(int j = i-3; j>=0; j--)
+        {
+            dp[i] = (dp[i] + dp[j] * 2) % MOD;
+        }
     }
     cout << dp[n];
-    
     return 0;
 }
