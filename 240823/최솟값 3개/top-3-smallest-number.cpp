@@ -9,6 +9,7 @@ int main() {
     int n, num;
     cin >> n;
     int x1,x2,x3;
+    long long result;
     priority_queue<int, vector<int>, greater<int>> pq;
     for(int i = 0; i<n; i++)
     {
@@ -23,7 +24,8 @@ int main() {
             pq.pop();
             x3 = pq.top();
             pq.pop();
-            cout << x1 * x2 * x3 << endl;
+            result = x1 * x2 * x3;
+            cout << result << endl;
             pq.push(x1);
             pq.push(x2);
             pq.push(x3);
