@@ -20,6 +20,7 @@ int main() {
     {
         if(currentSum + v[i] < 0)
         {
+            maxSum = max(maxSum, v[i]);
             currentSum = 0;
             continue;
         }
