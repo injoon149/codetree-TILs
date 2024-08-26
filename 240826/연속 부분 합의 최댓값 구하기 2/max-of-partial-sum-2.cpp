@@ -21,7 +21,7 @@ int main() {
         if(currentSum + v[i] < 0)
         {
             maxSum = max(maxSum, currentSum);
-            currentSum = v[i];
+            currentSum = 0;
         }
         else currentSum = currentSum + v[i];
         maxSum = max(maxSum, currentSum);
