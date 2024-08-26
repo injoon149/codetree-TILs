@@ -20,8 +20,8 @@ int main() {
     {
         if(currentSum + v[i] < 0)
         {
-            maxSum = max(maxSum, currentSum);
             currentSum = 0;
+            continue;
         }
         else currentSum = currentSum + v[i];
         maxSum = max(maxSum, currentSum);
