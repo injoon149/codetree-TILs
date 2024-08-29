@@ -49,7 +49,8 @@ int main() {
     cin >> r1 >> c1 >> r2 >> c2;
     push(r1-1, c1-1, 0);
     BFS();
-    if(step[r2-1][c2-1] == 0) cout <<"-1";
+    if(r1 == r2 && c1 == c2) cout << 0;
+    else if(step[r2-1][c2-1] == 0) cout <<"-1";
     else cout << step[r2-1][c2-1];
     return 0;
 }
