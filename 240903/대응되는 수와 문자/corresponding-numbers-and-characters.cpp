@@ -20,22 +20,22 @@ int main() {
     for(int i = 0; i<m; i++)
     {
         cin >> st;
-        for(auto iter = map_num.begin(); iter != map_num.end(); iter++)
+        if(map_num.find(st) == map_num.end())
         {
-            if(iter->first == st)
+            for(auto iter = map_num.begin(); iter != map_num.end(); iter++)
             {
-                cout << iter->second << endl;
-                break;
-            }
-            else if(49<=st[0] && st[0]<=57)
-            {
-                if(iter->second == stoi(st))
+                if(48 <= st[0] && st[0] <= 57)
                 {
-                    cout << iter->first << endl;
-                    break;
+                    if(iter->second == stoi(st))
+                    {
+                        cout << iter->first << endl;
+                    }
                 }
-                
-            }
+            }    
+        }
+        else
+        {
+            cout << map_num[st] << endl;
         }
     }
 
