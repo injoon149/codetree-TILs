@@ -26,7 +26,7 @@ int main() {
             {
                 cout << iter->second << endl;
             }
-            else if(isdigit(st[0]))
+            else if(49<=st[0] && st[0]<=57)
             {
                 if(iter->second == stoi(st))
                 {
