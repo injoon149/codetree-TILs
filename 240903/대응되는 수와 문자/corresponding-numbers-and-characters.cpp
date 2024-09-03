@@ -10,28 +10,21 @@ int main() {
     int n, m;
     cin >> n >> m;
     unordered_map<string, int> map_num;
+    unordered_map<int,string> map_num_second;
     string s;
     string st;
     for(int i = 0; i<n; i++)
     {
         cin >> s;
         map_num[s] = i+1;
+        map_num_second[i+1] = s;
     }
     for(int i = 0; i<m; i++)
     {
         cin >> st;
-        if(map_num.find(st) == map_num.end())
+        if(isdigit(st[0]))
         {
-            for(auto iter = map_num.begin(); iter != map_num.end(); iter++)
-            {
-                if(48 <= st[0] && st[0] <= 57)
-                {
-                    if(iter->second == stoi(st))
-                    {
-                        cout << iter->first << endl;
-                    }
-                }
-            }    
+            cout << map_num_second[stoi(st)] << endl;
         }
         else
         {
