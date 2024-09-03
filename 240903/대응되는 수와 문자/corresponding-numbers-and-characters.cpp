@@ -25,12 +25,14 @@ int main() {
             if(iter->first == st)
             {
                 cout << iter->second << endl;
+                break;
             }
             else if(49<=st[0] && st[0]<=57)
             {
                 if(iter->second == stoi(st))
                 {
                     cout << iter->first << endl;
+                    break;
                 }
                 
             }
