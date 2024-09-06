@@ -4,9 +4,10 @@ using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int n, x, y;
+    int n;
+    long long x,y;
     cin >> n;
-    unordered_map<int,int> m;
+    unordered_map<long long, long long> m;
     for(int i = 0; i<n; i++)
     {
         cin >> x >> y;
