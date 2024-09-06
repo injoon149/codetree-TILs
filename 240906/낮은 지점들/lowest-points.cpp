@@ -20,7 +20,7 @@ int main() {
             if(m[x] > y) m[x] = y;
         }
     }
-    int cnt = 0;
+    long long cnt = 0;
     for(auto iter = m.begin(); iter != m.end(); iter++)
     {
         cnt += (iter->second);
