@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <set>
 using namespace std;
 
 int main() {
@@ -8,6 +9,7 @@ int main() {
     string s;
     cin >> s;
     unordered_map<char,int> m;
+    set<char> set1;
     for(int i = 0; i<s.size(); i++)
     {
         m[s[i]]++;
@@ -16,10 +18,10 @@ int main() {
     {
         if(iter->second == 1)
         {
-            cout << iter->first;
-            return 0;
+            set1.insert(iter->first);
         }
     }
-    cout <<"None";
+    if(set1.empty()) cout << "None";
+    else cout << *(set1.begin());
     return 0;
 }
