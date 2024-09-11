@@ -8,9 +8,9 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n, num;
     cin >> n;
-    int x1,x2,x3;
+    long long x1,x2,x3;
     long long result, result2;
-    priority_queue<int, vector<int>, greater<int>> pq;
+    priority_queue<long long, vector<long long>, greater<long long>> pq;
     for(int i = 0; i<n; i++)
     {
         cin >> num;
