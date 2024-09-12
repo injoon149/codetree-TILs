@@ -103,42 +103,37 @@ int main() {
         {
             if(node->prev != nullptr)
             {
-                Pop(node);
-            }
-            if(node->prev == nullptr)
-            {
-                cout <<"(Null)" <<" ";
-            }
-            else cout << (node->prev)->data<<" ";
+               if((node->prev)->prev == nullptr)
+               {
+                    cout << "(Null)"<<" ";
+               }
+               else cout <<(node->prev)->prev->data <<" ";
+               cout << node->prev->data <<" ";
 
-            cout << node->data <<" ";
-
-            if(node->next == nullptr)
-            {
-                cout <<"(Null)" <<endl;
+               if((node->prev)->next == nullptr)
+               {
+                    cout <<"(Null)"<<" ";
+               }
+               else cout <<(node->prev)->next->data << endl;
             }
-            else cout << (node->next)->data <<endl; 
         }
         else if(num == 4)
         {
             if(node->next != nullptr)
             {
-                Pop(node);
-            }
-            if(node->prev == nullptr)
-            {
-                cout <<"(Null)" <<" ";
-            }
-            else cout << (node->prev)->data<<" ";
+                if((node->next)->prev == nullptr)
+               {
+                    cout << "(Null)"<<" ";
+               }
+               else cout <<(node->next)->prev->data <<" ";
+               cout << node->next->data <<" ";
 
-            cout << node->data <<" ";
-
-            if(node->next == nullptr)
-            {
-                cout <<"(Null)" <<endl;
+               if((node->next)->next == nullptr)
+               {
+                    cout <<"(Null)"<<" ";
+               }
+               else cout <<(node->next)->next->data << endl;
             }
-            else cout << (node->next)->data <<endl;
-
         }
     }
     return 0;
