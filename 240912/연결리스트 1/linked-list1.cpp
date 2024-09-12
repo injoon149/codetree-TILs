@@ -116,6 +116,19 @@ int main() {
                }
                else cout <<(node->prev)->next->data << endl;
             }
+            else
+            {
+                if(node->prev == nullptr)
+                {
+                    cout <<"(Null)" <<" ";
+                }
+                else cout << (node->prev)->data<<" ";
+                cout << node->data <<" ";
+                if(node->next == nullptr){
+                cout <<"(Null)" <<endl;
+                }
+                else cout << (node->next)->data <<endl;
+            }
         }
         else if(num == 4)
         {
@@ -133,6 +146,19 @@ int main() {
                     cout <<"(Null)"<<" ";
                }
                else cout <<(node->next)->next->data << endl;
+            }
+            else
+            {
+                if(node->prev == nullptr)
+                {
+                    cout <<"(Null)" <<" ";
+                }
+                else cout << (node->prev)->data<<" ";
+                cout << node->data <<" ";
+                if(node->next == nullptr){
+                cout <<"(Null)" <<endl;
+                }
+                else cout << (node->next)->data <<endl;
             }
         }
     }
