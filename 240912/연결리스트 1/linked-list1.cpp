@@ -103,7 +103,7 @@ int main() {
         {
             if(node->prev != nullptr)
             {
-                Pop(node->prev);
+                Pop(node);
             }
             if(node->prev == nullptr)
             {
@@ -123,7 +123,7 @@ int main() {
         {
             if(node->next != nullptr)
             {
-                Pop(node->next);
+                Pop(node);
             }
             if(node->prev == nullptr)
             {
