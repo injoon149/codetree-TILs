@@ -103,63 +103,43 @@ int main() {
         {
             if(node->prev != nullptr)
             {
-               if((node->prev)->prev == nullptr)
-               {
-                    cout << "(Null)"<<" ";
-               }
-               else cout <<(node->prev)->prev->data <<" ";
-               cout << node->prev->data <<" ";
-
-               if((node->prev)->next == nullptr)
-               {
-                    cout <<"(Null)"<<" ";
-               }
-               else cout <<(node->prev)->next->data << endl;
+                node = node->prev;
             }
-            else
+            if(node->prev == nullptr)
             {
-                if(node->prev == nullptr)
-                {
-                    cout <<"(Null)" <<" ";
-                }
-                else cout << (node->prev)->data<<" ";
-                cout << node->data <<" ";
-                if(node->next == nullptr){
-                cout <<"(Null)" <<endl;
-                }
-                else cout << (node->next)->data <<endl;
+                cout <<"(Null)" <<" ";
             }
+            else cout << (node->prev)->data<<" ";
+
+            cout << node->data <<" ";
+
+            if(node->next == nullptr)
+            {
+                cout <<"(Null)" <<endl;
+            }
+            else cout << (node->next)->data <<endl;
+            
         }
         else if(num == 4)
         {
             if(node->next != nullptr)
             {
-                if((node->next)->prev == nullptr)
-               {
-                    cout << "(Null)"<<" ";
-               }
-               else cout <<(node->next)->prev->data <<" ";
-               cout << node->next->data <<" ";
-
-               if((node->next)->next == nullptr)
-               {
-                    cout <<"(Null)"<<" ";
-               }
-               else cout <<(node->next)->next->data << endl;
+                node = node->next;
             }
-            else
+            if(node->prev == nullptr)
             {
-                if(node->prev == nullptr)
-                {
-                    cout <<"(Null)" <<" ";
-                }
-                else cout << (node->prev)->data<<" ";
-                cout << node->data <<" ";
-                if(node->next == nullptr){
-                cout <<"(Null)" <<endl;
-                }
-                else cout << (node->next)->data <<endl;
+                cout <<"(Null)" <<" ";
             }
+            else cout << (node->prev)->data<<" ";
+
+            cout << node->data <<" ";
+
+            if(node->next == nullptr)
+            {
+                cout <<"(Null)" <<endl;
+            }
+            else cout << (node->next)->data <<endl;
+
         }
     }
     return 0;
