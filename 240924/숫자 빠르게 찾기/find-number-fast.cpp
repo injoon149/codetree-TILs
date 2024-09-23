@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int binary_search(long long num, vector<long long> v)
+int binary_search(long long num, const vector<long long>& v)
 {
     int left = 0;
     int right = v.size()-1;
