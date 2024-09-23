@@ -18,6 +18,9 @@ int binary_search(long long num, vector<long long> v)
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     // 여기에 코드를 작성해주세요.
     int n,m;
     cin >> n >> m;
