@@ -26,10 +26,10 @@ int main() {
     {
         int s,e;
         tie(s,e) = v[i];
-        if(last_e < s)
+        if(last_e <= s)
         {
             cnt++;
-            last_e = s;
+            last_e = e;
         }
     }
     
